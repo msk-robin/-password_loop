@@ -6,31 +6,41 @@ alphabetic_characters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 
 
 numbers = ['0','1','2','3','4','5','6','7','8','9']
 
-# Define fixed values here
-password = input ("Create password: ")
+while True:
 
-count = 0
-for i in password:
-  if i in  alphabetic_characters:
-    count +=1
+  password = input ("Create password: ")
 
-count1 = 0
-for i in password:
-  if i in special_characters:
-    count1+=1
+  count = 0
+  for i in password:
+    if i in  alphabetic_characters:
+      count +=1
 
-count2 = 0
-for i in password:
-  if i in numbers:
-    count2+=1     
+  count1 = 0
+  for i in password:
+    if i in special_characters:
+      count1+=1
 
-if len(password) < 8:
-  print("Enter at least 8 characters!")
-if count < 3:
-  print("Enter at least 3 alphabetics!")
+  count2 = 0
+  for i in password:
+    if i in numbers:
+      count2+=1     
 
-if count1 < 3:
-  print("Enter at least 3 special characters!") 
+  if len(password) < 8:
+    print("Enter at least 8 characters!")
+    continue
 
-if count2 <3:
-  print("Enter at least 3 numbers!")
+  elif count < 3:
+    print("Enter at least 3 alphabetics!")
+    continue
+
+  elif count1 < 3:
+    print("Enter at least 3 special characters!")
+    continue 
+
+  elif count2 <3:
+    print("Enter at least 3 numbers!")
+    continue
+
+  else:
+    print("Password created successfully")
+    break
